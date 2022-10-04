@@ -16,10 +16,12 @@ import {
 } from "./restaurant-info-card.styles";
 
 export const RestaurantInfo = ({ restaurant = {} }) => {
+  console.log("BBB");
+  console.log(restaurant);
   const {
     name = "Restaurant Name",
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
-    images = [
+    photos = [
       "https://www.foodiesfeed.com/wp-content/uploads/2022/07/steak-tartare-and-beef-sashimi.jpg",
     ],
     address = "full address",
@@ -30,7 +32,7 @@ export const RestaurantInfo = ({ restaurant = {} }) => {
   const ratingArray = Array.from(new Array(Math.floor(rating)));
   return (
     <RestaurantCard>
-      <CardCover key={name} source={{ uri: images[0] }} />
+      <CardCover key={name} source={{ uri: photos }} />
       <Info>
         <Text variant="label">{name}</Text>
         <Section>
